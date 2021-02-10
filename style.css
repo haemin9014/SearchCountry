@@ -1,0 +1,22 @@
+.main-country {
+  display: flex;
+  font-size: 2rem;
+  transition: opacity 1s;
+}
+
+.container {
+  display: flex;
+  text-align: center;
+  font-family: system-ui;
+  color: #555;
+  background-color: #f7f7f7;
+  min-height: 90vh;
+  align-items: center;
+  justify-content: center;
+}
+#btn-close {
+  align-items: right;
+  justify-content: right;
+  display: flex;
+  margin-left: 1800px;
+}
