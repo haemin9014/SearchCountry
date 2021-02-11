@@ -57,11 +57,12 @@ searchBox.addEventListener("click", function () {
 
 searchBtn.addEventListener("click", function () {
   if (searchBox.value && searchBox.value !== "Search Country") {
-    console.log(searchBox.value);
-    printMainCountry(searchBox.value);
-    searchContainer.style.opacity = 0;
-    searchBtn.style.opacity = 0;
-    searchBox.value = "";
+    try {
+      printMainCountry(searchBox.value);
+      searchBox.value = "";
+    } catch {
+      alert("plase tpye in!");
+    }
   } else {
     alert("please type in country name!");
   }
@@ -72,6 +73,8 @@ const printMainCountry = async function (country) {
     `https://restcountries.eu/rest/v2/name/${country}`
   );
   let [data] = await countryData.json();
+  searchContainer.style.opacity = 0;
+  searchBtn.style.opacity = 0;
   printMain(data, "mainC");
   printCountryBorders(data);
 };
