@@ -14,6 +14,7 @@
 .country-borders {
   display: flex;
   transition: opacity 1s;
+  flex-wrap: nowrap;
 }
 .container {
   /* display: flex; */
@@ -53,6 +54,7 @@
   padding: 0.5%;
   border-style: solid;
   border-color: whitesmoke;
+  flex-wrap: wrap;
 }
 
 .hide-border {

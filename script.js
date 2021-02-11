@@ -34,8 +34,7 @@ const printMain = function (data, check) {
  `;
   if (check === "mainC") {
     mainCountry.insertAdjacentHTML("beforeend", showMain);
-  }
-  if (check === "bordersC") {
+  } else {
     borderP.style.opacity = 1;
     CountryBorders.insertAdjacentHTML("beforeend", showMain);
     CountryBorders.insertAdjacentHTML("beforeend", "  ");
@@ -88,7 +87,7 @@ const printCountryBorders = async function (border) {
       `https://restcountries.eu/rest/v2/alpha/${list}`
     );
     const data2 = await bordersData.json();
-    printMain(data2, "bordersC");
+    printMain(data2, `bordersC`);
   }
 };
 
