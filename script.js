@@ -18,15 +18,17 @@ const printMain = function (data, check) {
   <article class="country-${check}">
     <img class="search-img" src="${data.flag}" />
     <div class="country-print">
-      <h3 class="country-name">Country Name: ${data.name}</h3>
-      <h4 class="country-region">Region: ${data.region}</h4>
-      <p class="country-population"><span>Population: </span>${(
+      <h3 class="country-name"> Country Name: ${data.name}</h3>
+      <h4 class="country-region"> Region: ${data.region}</h4>
+      <h4 class="country-capital"> Capital: ${data.capital}</h4>
+      <h4 class="country-numericCode"> numericCode: ${data.numericCode}</h4>
+      <p class="country-population"><span> Population: </span>${(
         +data.population / 1000000
       ).toFixed(1)}</p>
-      <p class="country-lnaguage"><span>Language: </span>${
+      <p class="country-lnaguage"><span> Language: </span>${
         data.languages[0].name
       }</p>
-      <p class="country-currencies"><span>Currencies: </span>${
+      <p class="country-currencies"><span> Currencies: </span>${
         data.currencies[0].name
       }</p>
     </div>
@@ -74,6 +76,7 @@ const printMainCountry = async function (country) {
   let [data] = await countryData.json();
   searchContainer.style.opacity = 0;
   searchBtn.style.opacity = 0;
+  console.log(data);
   printMain(data, "mainC");
   printCountryBorders(data);
 };
